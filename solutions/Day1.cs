@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Windows.Forms;
 
-namespace AdventOfCode2021
+namespace AdventOfCode2021.solutions
 {
     public class Day1 : ProjectDay
     {

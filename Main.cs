@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdventOfCode2021.solutions;
 
 namespace AdventOfCode2021
 {
     public partial class Main : Form
     {
-        private static List<string> projects = new List<string>() {"day1"};
-
         public enum LogLevel
         {
             Result1,
@@ -25,35 +19,43 @@ namespace AdventOfCode2021
         public Main()
         {
             InitializeComponent();
-            foreach (var project in projects)
+            var projectDayType = typeof(ProjectDay);
+            var projectDays = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(s => s.GetTypes())
+                .Where(t => projectDayType.IsAssignableFrom(t));
+            foreach (var dayClass in projectDays)
             {
-                cmbDaySelector.Items.Add(project);
+                if (!dayClass.IsAbstract)
+                {
+                    cmbDaySelector.Items.Add(dayClass.Name);
+                }
             }
 
-            cmbDaySelector.SelectedIndex = projects.Count - 1;
+            cmbDaySelector.SelectedIndex = cmbDaySelector.Items.Count - 1;
         }
 
         private ProjectDay GetDayForSelectedIndex()
         {
-            switch (cmbDaySelector.SelectedIndex)
+            Type t = Type.GetType($"AdventOfCode2021.solutions.Day{cmbDaySelector.SelectedIndex+1}");
+            try
             {
-                case 0:
-                    return new Day1();
-                    break;
-
-                default:
-                    throw new Exception("not yet supported");
+                var newDay = (ProjectDay) Activator.CreateInstance(t);
+                newDay.SetLogFunction(LogFunction);
+                return newDay;
+            }
+            catch (Exception e)
+            {
+                LogFunction(e.Message);
+                throw;
             }
         }
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            ProjectDay projectDay = GetDayForSelectedIndex();
-            projectDay.SetLogFunction(LogFunction);
-            projectDay.Run();
+            GetDayForSelectedIndex().Run();
         }
 
-        private void LogFunction(string message, LogLevel logLevel)
+        private void LogFunction(string message, LogLevel logLevel = LogLevel.Normal)
         {
             switch (logLevel)
             {

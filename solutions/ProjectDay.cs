@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AdventOfCode2021
+namespace AdventOfCode2021.solutions
 {
     public abstract class ProjectDay
     {
