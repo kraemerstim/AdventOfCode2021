@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace AdventOfCode2021
 {
@@ -6,10 +10,15 @@ namespace AdventOfCode2021
     {
         public override void Run()
         {
-            foreach (var test in AOCUtility.FileLines(@"resources/day1/input.txt"))
-            {
-                Log(test);
-            }
+            List<int> depthList = AOCUtility.FileLines(@"resources/day1/input.txt").Select(int.Parse).ToList();
+
+            int depthCounter1 = Enumerable.Range(0, depthList.Count - 1)
+                .Count(x => (depthList[x] < depthList[x + 1]));
+            int depthCounter2 = Enumerable.Range(0, depthList.Count - 3)
+                .Count(x => (depthList[x] < depthList[x + 3]));
+
+            Log(Convert.ToString(depthCounter1), Main.LogLevel.Result1);
+            Log(Convert.ToString(depthCounter2), Main.LogLevel.Result2);
         }
     }
 }
