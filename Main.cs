@@ -36,7 +36,7 @@ namespace AdventOfCode2021
 
         private ProjectDay GetDayForSelectedIndex()
         {
-            Type t = Type.GetType($"AdventOfCode2021.solutions.Day{cmbDaySelector.SelectedIndex+1}");
+            Type t = Type.GetType($"AdventOfCode2021.solutions.{cmbDaySelector.Text}");
             try
             {
                 var newDay = (ProjectDay) Activator.CreateInstance(t);
