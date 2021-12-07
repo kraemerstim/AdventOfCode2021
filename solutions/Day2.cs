@@ -47,8 +47,8 @@ namespace AdventOfCode2021.solutions
                         break;
                 }
             }
-            Log(Convert.ToString(horizontalPosition * depth), Main.LogLevel.Result1);
-            Log(Convert.ToString(horizontalPosition * depth2), Main.LogLevel.Result2);
+            Log($"{horizontalPosition * depth}", Main.LogLevel.Result1);
+            Log($"{horizontalPosition * depth2}", Main.LogLevel.Result2);
         }
 
         private static Direction TranslateToDirection(string direction)

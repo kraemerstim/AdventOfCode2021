@@ -36,11 +36,11 @@ namespace AdventOfCode2021.solutions
                 DoEvolutionStep(evolutionClasses);
                 if (i == 80)
                 {
-                    Log("" + evolutionClasses.Select(e => e.CurrentSize).Sum(), Main.LogLevel.Result1);
+                    Log($"{evolutionClasses.Select(e => e.CurrentSize).Sum()}", Main.LogLevel.Result1);
                 }
             }
 
-            Log("" + evolutionClasses.Select(e => e.CurrentSize).Sum(), Main.LogLevel.Result2);
+            Log($"{evolutionClasses.Select(e => e.CurrentSize).Sum()}", Main.LogLevel.Result2);
         }
 
         private void DoEvolutionStep(List<EvolutionClass> evolutionClasses)

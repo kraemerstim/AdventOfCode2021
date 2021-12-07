@@ -73,7 +73,7 @@ namespace AdventOfCode2021.solutions
             }
 
             var counter = board.Cast<int>().Count(coordinate => coordinate > 1);
-            Log("" + counter, Main.LogLevel.Result1);
+            Log($"{counter}", Main.LogLevel.Result1);
             
             var board2 = new int[boardsize, boardsize];
             foreach (var line in lines)
@@ -81,7 +81,7 @@ namespace AdventOfCode2021.solutions
                 line.DrawLineOnBoard(board2, true);
             }
             counter = board2.Cast<int>().Count(coordinate => coordinate > 1);
-            Log("" + counter, Main.LogLevel.Result2);
+            Log($"{counter}", Main.LogLevel.Result2);
         }
     }
 }

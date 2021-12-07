@@ -109,7 +109,7 @@ namespace AdventOfCode2021.solutions
                         if (winningSheet == null)
                         {
                             winningSheet = curBingoSheet;
-                            Log("" + bingoNumber * curBingoSheet.GetSumOfNonSelectedNumbers(), Main.LogLevel.Result1);
+                            Log($"{bingoNumber * curBingoSheet.GetSumOfNonSelectedNumbers()}", Main.LogLevel.Result1);
                         }
                         
                         bingoSheetsToRemove.Add(curBingoSheet);
@@ -122,7 +122,7 @@ namespace AdventOfCode2021.solutions
                     if (bingoSheets.Count == 0)
                     {
                         losingSheet = sheet;
-                        Log("" + bingoNumber * sheet.GetSumOfNonSelectedNumbers(), Main.LogLevel.Result2);
+                        Log($"{bingoNumber * sheet.GetSumOfNonSelectedNumbers()}", Main.LogLevel.Result2);
                     }
                 }
 

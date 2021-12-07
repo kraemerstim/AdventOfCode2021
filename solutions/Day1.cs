@@ -15,8 +15,10 @@ namespace AdventOfCode2021.solutions
             int depthCounter2 = Enumerable.Range(0, depthList.Count - 3)
                 .Count(x => (depthList[x] < depthList[x + 3]));
 
-            Log(Convert.ToString(depthCounter1), Main.LogLevel.Result1);
-            Log(Convert.ToString(depthCounter2), Main.LogLevel.Result2);
-        }
+            Log($"{depthCounter1}", Main.LogLevel.Result1);
+
+            Log($"{depthCounter2}", Main.LogLevel.Result2);
     }
+}
+
 }

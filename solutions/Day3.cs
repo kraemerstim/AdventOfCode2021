@@ -21,12 +21,12 @@ namespace AdventOfCode2021.solutions
                 result1 += oneCount > zeroCount ? "1" : "0";
                 result2 += oneCount > zeroCount ? "0" : "1";
             }
-            Log(Convert.ToString(Convert.ToInt32(result1, 2) * Convert.ToInt32(result2, 2)), Main.LogLevel.Result1);
+            Log($"{Convert.ToInt32(result1, 2) * Convert.ToInt32(result2, 2)}", Main.LogLevel.Result1);
             
             //Part 2
             result1 = CollapseToSingleString(binaryList, 0, (one, zero) => one >= zero);
             result2 = CollapseToSingleString(binaryList, 0, (one, zero) => one < zero);
-            Log(Convert.ToString(Convert.ToInt32(result1, 2) * Convert.ToInt32(result2, 2)), Main.LogLevel.Result2);
+            Log($"{Convert.ToInt32(result1, 2) * Convert.ToInt32(result2, 2)}", Main.LogLevel.Result2);
         }
 
         private string CollapseToSingleString(List<string> strings, int depth, Func<int, int, bool> useOneFunc)
