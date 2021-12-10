@@ -23,7 +23,7 @@ namespace AdventOfCode2021
             var projectDays = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(s => s.GetTypes())
                 .Where(t => projectDayType.IsAssignableFrom(t));
-            foreach (var dayClass in projectDays)
+            foreach (var dayClass in projectDays.OrderBy(type => type.Name.Length))
             {
                 if (!dayClass.IsAbstract)
                 {
