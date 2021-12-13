@@ -48,10 +48,12 @@
             // 
             // lbLog
             // 
+            this.lbLog.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLog.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lbLog.FormattingEnabled = true;
             this.lbLog.Location = new System.Drawing.Point(167, 12);
             this.lbLog.Name = "lbLog";
-            this.lbLog.Size = new System.Drawing.Size(611, 381);
+            this.lbLog.Size = new System.Drawing.Size(611, 368);
             this.lbLog.TabIndex = 1;
             // 
             // btnRun
@@ -66,6 +68,7 @@
             // 
             // lblResult1
             // 
+            this.lblResult1.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblResult1.Location = new System.Drawing.Point(167, 402);
             this.lblResult1.Name = "lblResult1";
             this.lblResult1.Size = new System.Drawing.Size(100, 23);
@@ -74,6 +77,7 @@
             // 
             // tbResult1
             // 
+            this.tbResult1.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tbResult1.Location = new System.Drawing.Point(219, 399);
             this.tbResult1.Name = "tbResult1";
             this.tbResult1.ReadOnly = true;
@@ -82,6 +86,7 @@
             // 
             // tbResult2
             // 
+            this.tbResult2.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tbResult2.Location = new System.Drawing.Point(534, 399);
             this.tbResult2.Name = "tbResult2";
             this.tbResult2.ReadOnly = true;
@@ -90,6 +95,7 @@
             // 
             // lblResult2
             // 
+            this.lblResult2.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblResult2.Location = new System.Drawing.Point(482, 402);
             this.lblResult2.Name = "lblResult2";
             this.lblResult2.Size = new System.Drawing.Size(100, 23);
@@ -100,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 426);
+            this.ClientSize = new System.Drawing.Size(788, 432);
             this.Controls.Add(this.tbResult2);
             this.Controls.Add(this.lblResult2);
             this.Controls.Add(this.tbResult1);
