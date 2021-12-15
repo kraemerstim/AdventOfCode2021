@@ -57,17 +57,31 @@ namespace AdventOfCode2021
 
         private void LogFunction(string message, LogLevel logLevel = LogLevel.Normal)
         {
-            switch (logLevel)
+            if (lbLog.InvokeRequired)
             {
-                case LogLevel.Result1:
-                    tbResult1.Text = message;
-                    break;
-                case LogLevel.Result2:
-                    tbResult2.Text = message;
-                    break;
-                default:
-                    lbLog.Items.Add(message);
-                    break;
+                void Log()
+                {
+                    LogFunction(message, logLevel);
+                }
+
+                lbLog.Invoke((Action) Log);
+            }
+            else
+            {
+                switch (logLevel)
+                {
+                    case LogLevel.Result1:
+                        tbResult1.Text = message;
+                        break;
+                    case LogLevel.Result2:
+                        tbResult2.Text = message;
+                        break;
+                    default:
+                        lbLog.Items.Add(message);
+                        lbLog.SelectedIndex = lbLog.Items.Count - 1;
+                        lbLog.SelectedIndex = -1;
+                        break;
+                }
             }
         }
     }
