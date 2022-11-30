@@ -97,6 +97,7 @@ namespace AdventOfCode2021.solutions
             var endArea = riskMap[^1][^1];
 
             var doneSet = new HashSet<RiskArea>(){startArea};
+            //var doneSet = new List<RiskArea>(){startArea};
             var checkSet = new SortedSet<RiskArea>(new RiskAreaComparer());
             
             foreach (var area in startArea.SurroundingAreas)
